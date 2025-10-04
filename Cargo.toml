@@ -1,0 +1,25 @@
+[package]
+name = "sentiment-analysis-trading"
+version = "0.1.0"
+edition = "2021"
+authors = ["Gabriel Demetrios Lafis"]
+description = "Alternative data sentiment analyzer using NLP for trading signals"
+license = "MIT"
+repository = "https://github.com/GabrielDemetrius/rust-sentiment-analysis-trading"
+keywords = ["trading", "sentiment-analysis", "nlp", "alternative-data", "fintech"]
+categories = ["finance", "algorithms"]
+
+[dependencies]
+tokio = { version = "1.40", features = ["full"] }
+reqwest = { version = "0.12", features = ["json"] }
+scraper = "0.20"
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+rust_decimal = "1.36"
+anyhow = "1.0"
+log = "0.4"
+env_logger = "0.11"
+
+[[bin]]
+name = "sentiment-analyzer"
+path = "src/main.rs"
