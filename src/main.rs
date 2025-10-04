@@ -1,5 +1,4 @@
 use anyhow::Result;
-use sentiment_analysis_trading::*;
 
 #[tokio::main]
 async fn main() -> Result<()> {

@@ -1,6 +1,6 @@
 # Sentiment Analysis for Trading em Rust
 
-![Build Status](https://img.shields.io/github/actions/workflow/status/GabrielDemetrius/rust-sentiment-analysis-trading/rust.yml?branch=main&style=for-the-badge) ![License](https://img.shields.io/github/license/GabrielDemetrius/rust-sentiment-analysis-trading?style=for-the-badge)
+![Build Status](https://img.shields.io/github/actions/workflow/status/galafis/rust-sentiment-analysis-trading/rust.yml?branch=main&style=for-the-badge) ![License](https://img.shields.io/github/license/galafis/rust-sentiment-analysis-trading?style=for-the-badge)
 
 ---
 
@@ -29,7 +29,7 @@ A system that uses Natural Language Processing (NLP) to analyze the sentiment of
 ## 🚀 Getting Started
 
 ```sh
-git clone https://github.com/GabrielDemetrius/rust-sentiment-analysis-trading.git
+git clone https://github.com/galafis/rust-sentiment-analysis-trading.git
 cd rust-sentiment-analysis-trading
 cargo build --release
 cargo run --release

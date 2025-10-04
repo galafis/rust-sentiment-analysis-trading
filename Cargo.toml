@@ -5,7 +5,7 @@ edition = "2021"
 authors = ["Gabriel Demetrios Lafis"]
 description = "Alternative data sentiment analyzer using NLP for trading signals"
 license = "MIT"
-repository = "https://github.com/GabrielDemetrius/rust-sentiment-analysis-trading"
+repository = "https://github.com/galafis/rust-sentiment-analysis-trading"
 keywords = ["trading", "sentiment-analysis", "nlp", "alternative-data", "fintech"]
 categories = ["finance", "algorithms"]
 
