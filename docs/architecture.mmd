@@ -1,0 +1,29 @@
+graph TD
+    subgraph Data Collection
+        A[News Scraper] --> D{Data Aggregator}
+        B[Social Media API] --> D
+        C[Financial Reports] --> D
+    end
+
+    subgraph NLP Pipeline
+        D --> E[Text Preprocessor]
+        E --> F[Sentiment Analyzer]
+        F --> G[Entity Recognition]
+        G --> H[Sentiment Score]
+    end
+
+    subgraph Signal Generation
+        H --> I{Signal Generator}
+        I --> J[Buy Signal]
+        I --> K[Sell Signal]
+        I --> L[Hold Signal]
+    end
+
+    subgraph Analytics
+        H --> M{Correlation Engine}
+        M --> N[Price Correlation]
+        N --> O[Dashboard]
+        J --> O
+        K --> O
+        L --> O
+    end

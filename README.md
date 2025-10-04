@@ -13,6 +13,9 @@ Um sistema que utiliza Processamento de Linguagem Natural (NLP) para analisar o 
 - **Análise de Sentimento:** Modelos de NLP para classificar o sentimento do texto.
 - **Geração de Sinais:** Criação de sinais de compra/venda baseados no sentimento do mercado.
 
+### Arquitetura
+![Arquitetura do Sentiment Analysis Trading](docs/architecture.png)
+
 ---
 
 ## 🇺🇸 Overview (English)
@@ -23,6 +26,9 @@ A system that uses Natural Language Processing (NLP) to analyze the sentiment of
 - **Web Scraping:** Collection of news from financial portals.
 - **Sentiment Analysis:** NLP models to classify text sentiment.
 - **Signal Generation:** Creation of buy/sell signals based on market sentiment.
+
+### Architecture
+![Sentiment Analysis Trading Architecture](docs/architecture.png)
 
 ---
 
