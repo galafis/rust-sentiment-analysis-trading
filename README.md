@@ -105,7 +105,7 @@ Alternative data is non-traditional information used to make investment decision
 
 ## 🏗️ Arquitetura
 
-![Arquitetura do Sentiment Analysis Trading](docs/architecture.png)
+![Pipeline de Análise de Sentimento](docs/images/pipeline.png)
 
 O sistema é composto por 5 módulos principais:
 
