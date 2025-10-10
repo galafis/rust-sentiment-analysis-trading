@@ -4,14 +4,10 @@
 
 ![Rust](https://img.shields.io/badge/Rust-1.70+-orange?style=for-the-badge&logo=rust)
 ![License](https://img.shields.io/github/license/galafis/rust-sentiment-analysis-trading?style=for-the-badge)
-![Build](https://img.shields.io/badge/build-passing-brightgreen?style=for-the-badge)
+
 ![Stars](https://img.shields.io/github/stars/galafis/rust-sentiment-analysis-trading?style=for-the-badge)
 
-**Sistema de análise de sentimento usando NLP para geração de sinais de trading a partir de dados alternativos**
-
-[Documentação](https://github.com/galafis/rust-sentiment-analysis-trading/tree/main/docs) •
-[Exemplos](https://github.com/galafis/rust-sentiment-analysis-trading/tree/main/examples) •
-[Reportar Bug](https://github.com/galafis/rust-sentiment-analysis-trading/issues)
+**Sistema de análise de sentimento usando NLP para geração de sinais de trading a partir de dados alternativos**Bug](https://github.com/galafis/rust-sentiment-analysis-trading/issues)
 
 </div>
 
