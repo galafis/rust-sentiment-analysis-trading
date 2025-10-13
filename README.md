@@ -4,10 +4,12 @@
 
 ![Rust](https://img.shields.io/badge/Rust-1.70+-orange?style=for-the-badge&logo=rust)
 ![License](https://img.shields.io/github/license/galafis/rust-sentiment-analysis-trading?style=for-the-badge)
-
 ![Stars](https://img.shields.io/github/stars/galafis/rust-sentiment-analysis-trading?style=for-the-badge)
+[![Issues](https://img.shields.io/github/issues/galafis/rust-sentiment-analysis-trading?style=for-the-badge)](https://github.com/galafis/rust-sentiment-analysis-trading/issues)
 
-**Sistema de análise de sentimento usando NLP para geração de sinais de trading a partir de dados alternativos**Bug](https://github.com/galafis/rust-sentiment-analysis-trading/issues)
+**Sistema de análise de sentimento usando NLP para geração de sinais de trading a partir de dados alternativos**
+
+[📚 Documentação](#-visão-geral) • [🚀 Quick Start](#-instalação) • [💡 Exemplos](#-exemplos) • [📖 API Docs](docs/API.md) • [🤝 Contribuir](CONTRIBUTING.md)
 
 </div>
 
@@ -24,6 +26,8 @@
 - [Exemplos](#-exemplos)
 - [Conceitos](#-conceitos)
 - [Performance](#-performance)
+- [Testes](#-testes)
+- [Contribuindo](#-contribuindo)
 - [Roadmap](#-roadmap)
 - [Licença](#-licença)
 - [Autor](#-autor)
@@ -105,7 +109,13 @@ Alternative data is non-traditional information used to make investment decision
 
 ## 🏗️ Arquitetura
 
+### Pipeline de Processamento
+
 ![Pipeline de Análise de Sentimento](docs/images/pipeline.png)
+
+### Arquitetura Detalhada
+
+![Arquitetura do Sistema](docs/architecture.png)
 
 O sistema é composto por 5 módulos principais:
 
@@ -211,17 +221,35 @@ fn main() -> Result<()> {
 
 ## 📚 Exemplos
 
-O diretório `examples/` contém exemplos práticos:
+O diretório `examples/` contém exemplos práticos e demonstrações:
 
-- [`sentiment_analysis.rs`](examples/sentiment_analysis.rs) - Análise de sentimento de artigos
+### Exemplos Disponíveis
 
-Para executar um exemplo:
+- **[`sentiment_analysis.rs`](examples/sentiment_analysis.rs)** - Análise básica de sentimento de artigos
+  ```bash
+  cargo run --release --example sentiment_analysis
+  ```
 
-```bash
-cargo run --release --example sentiment_analysis
-```
+- **[`advanced_analysis.rs`](examples/advanced_analysis.rs)** - Demo completo com:
+  - Análise de sentimento avançada
+  - Geração de sinais de trading
+  - Análise de correlação preço-sentimento
+  - Dashboard interativo
+  ```bash
+  cargo run --release --example advanced_analysis
+  ```
 
-**Saída esperada:**
+- **[`benchmark.rs`](examples/benchmark.rs)** - Benchmarks de performance
+  - Teste de velocidade de análise de sentimento
+  - Teste de geração de sinais
+  - Teste de extração de entidades
+  - Pipeline completo de análise
+  ```bash
+  cargo run --release --example benchmark
+  ```
+
+### Saída Esperada (sentiment_analysis)
+
 ```
 === Sentiment Analysis Trading - Example ===
 
@@ -323,17 +351,107 @@ Correlação: 0.75 (lag: 2h)
 
 ---
 
+## 🧪 Testes
+
+O projeto possui cobertura abrangente de testes unitários e de integração.
+
+### Executando os Testes
+
+```bash
+# Executar todos os testes
+cargo test
+
+# Executar testes com output detalhado
+cargo test -- --nocapture
+
+# Executar testes de um módulo específico
+cargo test nlp::
+
+# Executar testes de documentação
+cargo test --doc
+```
+
+### Cobertura de Testes
+
+- ✅ **37 testes unitários** cobrindo todos os módulos
+- ✅ **2 testes de documentação** garantindo exemplos funcionais
+- ✅ Testes para análise de sentimento (positivo, negativo, neutro)
+- ✅ Testes para geração de sinais (buy, sell, hold)
+- ✅ Testes para scrapers e data providers
+- ✅ Testes para correlação e análise de preços
+- ✅ Testes para dashboard e formatação
+
+### Exemplo de Saída dos Testes
+
+```bash
+running 37 tests
+test correlation::tests::test_calculate_correlation ... ok
+test correlation::tests::test_price_change ... ok
+test nlp::tests::test_positive_sentiment ... ok
+test nlp::tests::test_negative_sentiment ... ok
+test signals::tests::test_buy_signal ... ok
+test signals::tests::test_sell_signal ... ok
+...
+test result: ok. 37 passed; 0 failed; 0 ignored
+```
+
+---
+
+## 🤝 Contribuindo
+
+Contribuições são bem-vindas! Este projeto segue as melhores práticas da comunidade Rust.
+
+### Como Contribuir
+
+1. **Fork** o projeto
+2. Crie uma **branch** para sua feature (`git checkout -b feature/AmazingFeature`)
+3. **Commit** suas mudanças (`git commit -m 'Add some AmazingFeature'`)
+4. **Push** para a branch (`git push origin feature/AmazingFeature`)
+5. Abra um **Pull Request**
+
+### Diretrizes
+
+- Siga os padrões de código Rust (use `cargo fmt` e `cargo clippy`)
+- Adicione testes para novas funcionalidades
+- Atualize a documentação quando necessário
+- Mantenha commits limpos e descritivos
+
+Para mais detalhes, consulte [CONTRIBUTING.md](CONTRIBUTING.md).
+
+---
+
 ## 🗺️ Roadmap
 
-- [x] Web scraping básico
-- [x] Análise de sentimento simples
-- [x] Geração de sinais
-- [ ] Integração com modelos de NLP avançados (BERT, GPT)
-- [ ] Scraping de mais fontes (Twitter API, Reddit API)
-- [ ] Dashboard web em tempo real
-- [ ] Backtesting completo
-- [ ] Alertas via Telegram/Discord
+### ✅ Concluído (v0.1.0)
+
+- [x] Estrutura base do projeto
+- [x] Tipos de dados fundamentais (Article, SentimentScore, Signal)
+- [x] Módulo NLP com análise de sentimento baseada em regras
+- [x] Geração de sinais de trading (Buy/Sell/Hold)
+- [x] Mock data provider para testes
+- [x] Módulo de correlação preço-sentimento
+- [x] Dashboard de visualização em texto
+- [x] 37+ testes unitários
+- [x] Exemplos funcionais
+- [x] Documentação completa
+
+### 🚧 Em Desenvolvimento
+
+- [ ] Integração com modelos de NLP avançados (BERT, Transformers)
+- [ ] Scraping real de fontes (Twitter API, Reddit API)
+- [ ] Cache de resultados para otimização
+- [ ] API REST para integração externa
+
+### 🔮 Futuro
+
+- [ ] Dashboard web interativo em tempo real
+- [ ] Backtesting completo com dados históricos
+- [ ] Alertas via Telegram/Discord/Email
 - [ ] Machine Learning para otimização de sinais
+- [ ] Análise de múltiplos time frames
+- [ ] Integração com exchanges (Binance, Coinbase)
+- [ ] Suporte a múltiplos idiomas (PT-BR, EN, ES)
+- [ ] WebAssembly para execução no browser
 
 ---
 
