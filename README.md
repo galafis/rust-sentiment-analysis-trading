@@ -4,10 +4,10 @@
 
 ![Rust](https://img.shields.io/badge/Rust-1.70+-orange?style=for-the-badge&logo=rust)
 ![License](https://img.shields.io/github/license/galafis/rust-sentiment-analysis-trading?style=for-the-badge)
-
 ![Stars](https://img.shields.io/github/stars/galafis/rust-sentiment-analysis-trading?style=for-the-badge)
+[![Issues](https://img.shields.io/github/issues/galafis/rust-sentiment-analysis-trading?style=for-the-badge)](https://github.com/galafis/rust-sentiment-analysis-trading/issues)
 
-**Sistema de análise de sentimento usando NLP para geração de sinais de trading a partir de dados alternativos**Bug](https://github.com/galafis/rust-sentiment-analysis-trading/issues)
+**Sistema de análise de sentimento usando NLP para geração de sinais de trading a partir de dados alternativos**
 
 </div>
 
@@ -105,7 +105,13 @@ Alternative data is non-traditional information used to make investment decision
 
 ## 🏗️ Arquitetura
 
+### Pipeline de Processamento
+
 ![Pipeline de Análise de Sentimento](docs/images/pipeline.png)
+
+### Arquitetura Detalhada
+
+![Arquitetura do Sistema](docs/architecture.png)
 
 O sistema é composto por 5 módulos principais:
 
