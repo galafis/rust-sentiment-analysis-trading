@@ -1,6 +1,7 @@
 use sentiment_analysis_trading::*;
 use sentiment_analysis_trading::scrapers::MockDataProvider;
 use std::time::Instant;
+use std::hint::black_box;
 
 fn main() {
     println!("╔════════════════════════════════════════════════════════════╗");
@@ -33,7 +34,7 @@ fn benchmark_sentiment_analysis() {
     let start = Instant::now();
     for _ in 0..iterations {
         for article in &articles {
-            let _ = analyze_sentiment(article);
+            let _ = black_box(analyze_sentiment(article));
         }
     }
     let duration = start.elapsed();
@@ -66,7 +67,7 @@ fn benchmark_signal_generation() {
     
     let start = Instant::now();
     for _ in 0..iterations {
-        let _ = generate_signal(&sentiment, "BTC");
+        let _ = black_box(generate_signal(&sentiment, "BTC"));
     }
     let duration = start.elapsed();
     
@@ -90,7 +91,7 @@ fn benchmark_entity_extraction() {
     
     let start = Instant::now();
     for _ in 0..iterations {
-        let _ = extract_entities(text);
+        black_box(extract_entities(text));
     }
     let duration = start.elapsed();
     

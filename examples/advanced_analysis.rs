@@ -85,7 +85,7 @@ fn demo_signal_generation() -> Result<()> {
             neutral: neu,
         };
         
-        let (signal, signal_type) = generate_signal_with_type(&sentiment, symbol)?;
+        let (signal, signal_type) = generate_signal_with_type(&sentiment, &symbol)?;
         
         println!("{}", dashboard::format_signal(&signal, &signal_type));
         println!("Signal Strength: {}/100", calculate_signal_strength(&sentiment));

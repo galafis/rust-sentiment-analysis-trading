@@ -9,7 +9,7 @@
 
 **Sistema de análise de sentimento usando NLP para geração de sinais de trading a partir de dados alternativos**
 
-[📚 Documentação](#-visão-geral) • [🚀 Quick Start](#-instalação) • [💡 Exemplos](#-exemplos) • [🤝 Contribuir](CONTRIBUTING.md)
+[📚 Documentação](#-visão-geral) • [🚀 Quick Start](#-instalação) • [💡 Exemplos](#-exemplos) • [📖 API Docs](docs/API.md) • [🤝 Contribuir](CONTRIBUTING.md)
 
 </div>
 
