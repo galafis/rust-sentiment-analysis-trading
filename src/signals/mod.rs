@@ -146,7 +146,7 @@ mod tests {
             neutral: dec!(0.4),
         };
         
-        let (signal, signal_type) = generate_signal_with_type(&sentiment, "BTC").unwrap();
+        let (_signal, signal_type) = generate_signal_with_type(&sentiment, "BTC").unwrap();
         assert_eq!(signal_type, SignalType::Hold);
     }
     

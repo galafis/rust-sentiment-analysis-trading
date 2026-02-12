@@ -4,7 +4,6 @@
 
 ![Rust](https://img.shields.io/badge/Rust-1.70+-orange?style=for-the-badge&logo=rust)
 ![License](https://img.shields.io/github/license/galafis/rust-sentiment-analysis-trading?style=for-the-badge)
-![Stars](https://img.shields.io/github/stars/galafis/rust-sentiment-analysis-trading?style=for-the-badge)
 [![Issues](https://img.shields.io/github/issues/galafis/rust-sentiment-analysis-trading?style=for-the-badge)](https://github.com/galafis/rust-sentiment-analysis-trading/issues)
 
 **Sistema de análise de sentimento usando NLP para geração de sinais de trading a partir de dados alternativos**
@@ -178,6 +177,7 @@ cargo run --release --example sentiment_analysis
 ### Exemplo de Código
 
 ```rust
+use anyhow::Result;
 use sentiment_analysis_trading::*;
 use rust_decimal_macros::dec;
 
@@ -185,7 +185,7 @@ fn main() -> Result<()> {
     // Criar artigo de notícia
     let article = Article {
         title: "Bitcoin Surges to New Highs".to_string(),
-        content: "Bitcoin reaches unprecedented levels...".to_string(),
+        content: "Bitcoin reaches unprecedented levels as adoption grows".to_string(),
         source: "CryptoNews".to_string(),
         timestamp: 1696435200,
     };
@@ -199,16 +199,16 @@ fn main() -> Result<()> {
     println!("  Neutral: {}", sentiment.neutral);
 
     // Gerar sinal de trading
-    let signal = generate_signal(&sentiment)?;
+    let (signal, signal_type) = generate_signal_with_type(&sentiment, "BTC")?;
     
-    match signal {
-        Signal::Buy(confidence) => {
-            println!("🟢 BUY Signal (confidence: {}%)", confidence * 100);
+    match signal_type {
+        SignalType::Buy => {
+            println!("🟢 BUY Signal (confidence: {}%)", signal.confidence * dec!(100));
         }
-        Signal::Sell(confidence) => {
-            println!("🔴 SELL Signal (confidence: {}%)", confidence * 100);
+        SignalType::Sell => {
+            println!("🔴 SELL Signal (confidence: {}%)", signal.confidence * dec!(100));
         }
-        Signal::Hold => {
+        SignalType::Hold => {
             println!("🟡 HOLD Signal");
         }
     }
@@ -373,7 +373,7 @@ cargo test --doc
 
 ### Cobertura de Testes
 
-- ✅ **37 testes unitários** cobrindo todos os módulos
+- ✅ **35 testes unitários** cobrindo todos os módulos
 - ✅ **2 testes de documentação** garantindo exemplos funcionais
 - ✅ Testes para análise de sentimento (positivo, negativo, neutro)
 - ✅ Testes para geração de sinais (buy, sell, hold)
@@ -384,7 +384,7 @@ cargo test --doc
 ### Exemplo de Saída dos Testes
 
 ```bash
-running 37 tests
+running 35 tests
 test correlation::tests::test_calculate_correlation ... ok
 test correlation::tests::test_price_change ... ok
 test nlp::tests::test_positive_sentiment ... ok
@@ -392,7 +392,7 @@ test nlp::tests::test_negative_sentiment ... ok
 test signals::tests::test_buy_signal ... ok
 test signals::tests::test_sell_signal ... ok
 ...
-test result: ok. 37 passed; 0 failed; 0 ignored
+test result: ok. 35 passed; 0 failed; 0 ignored
 ```
 
 ---
@@ -431,7 +431,7 @@ Para mais detalhes, consulte [CONTRIBUTING.md](CONTRIBUTING.md).
 - [x] Mock data provider para testes
 - [x] Módulo de correlação preço-sentimento
 - [x] Dashboard de visualização em texto
-- [x] 37+ testes unitários
+- [x] 35 testes unitários
 - [x] Exemplos funcionais
 - [x] Documentação completa
 
@@ -476,8 +476,6 @@ Formação: Análise e Desenvolvimento de Sistemas, Gestão de TI, Segurança Ci
 
 <div align="center">
 
-**⭐ Se este projeto foi útil, considere dar uma estrela!**
-
-Made with ❤️ and Rust 🦀
+Made with Rust 🦀
 
 </div>

@@ -306,8 +306,6 @@ Se tiver dúvidas sobre como contribuir, abra uma issue ou entre em contato:
 
 <div align="center">
 
-**Obrigado por contribuir! 🚀**
-
-Made with ❤️ and Rust 🦀
+Made with Rust 🦀
 
 </div>

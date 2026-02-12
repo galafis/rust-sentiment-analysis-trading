@@ -1,6 +1,5 @@
 use anyhow::Result;
 use sentiment_analysis_trading::*;
-use rust_decimal_macros::dec;
 
 fn main() -> Result<()> {
     println!("=== Sentiment Analysis Trading - Example ===\n");
@@ -28,20 +27,7 @@ fn main() -> Result<()> {
         println!("  Title: {}", article.title);
         println!("  Source: {}", article.source);
 
-        // Simulate sentiment analysis
-        let sentiment = if article.content.contains("surges") || article.content.contains("grows") {
-            SentimentScore {
-                positive: dec!(0.85),
-                negative: dec!(0.05),
-                neutral: dec!(0.10),
-            }
-        } else {
-            SentimentScore {
-                positive: dec!(0.15),
-                negative: dec!(0.70),
-                neutral: dec!(0.15),
-            }
-        };
+        let sentiment = analyze_sentiment(&article)?;
 
         println!("  Sentiment:");
         println!("    Positive: {}", sentiment.positive);
